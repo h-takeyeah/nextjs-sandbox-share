@@ -2,6 +2,8 @@
 
 Markdown を扱えるライブラリの比較用サンプルアプリ
 
+react-markdown と remark-react が remark のバージョンで喧嘩したので，react-markdown だけ別ブランチになっている．react-markdown の結果は[こちら](https://github.com/h-takeyeah/nextjs-sandbox-share/tree/react-markdown/remote-markdown-app#react-markdown)．remark-react は remark-math@4 じゃないと動かなかったのだが，最新版は6なので react-markdown の方がいいかも．
+
 ## marked
 
 bf1eb09
