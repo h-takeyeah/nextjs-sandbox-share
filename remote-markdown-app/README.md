@@ -53,8 +53,8 @@ Route (pages)                              Size     First Load JS
 ├   /_app                                  0 B            77.8 kB
 ├ ○ /404                                   182 B            78 kB
 ├ ○ /marked                                18.9 kB        96.7 kB
-├ ○ /micromark (302 ms)                    15.8 kB         169 kB
-└ ○ /react-markdown (361 ms)               39.4 kB         193 kB
+├ ○ /micromark (319 ms)                    15.8 kB         169 kB
+└ ○ /react-markdown                        39.4 kB         193 kB
     └ css/c0eba1c9baeeb50e.css             3.77 kB
 + First Load JS shared by all              77.8 kB
   ├ chunks/framework-6d147d7a7a824486.js   45.2 kB
