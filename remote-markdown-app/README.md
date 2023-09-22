@@ -2,6 +2,12 @@
 
 Markdown を扱えるライブラリの比較用サンプルアプリ
 
+```sh
+pnpm i
+pnpx tsx apiserver/server.ts&
+pnpm dev
+```
+
 ## marked
 
 bf1eb09
