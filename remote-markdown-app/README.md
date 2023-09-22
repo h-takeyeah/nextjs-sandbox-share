@@ -64,3 +64,29 @@ Route (pages)                              Size     First Load JS
 
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 ```
+
+## remarkable
+
+e9a88e1
+
+Markdown -> HTML の変換の速さをウリにしているらしい
+
+```plain
+Route (pages)                              Size     First Load JS
+┌ ○ / (312 ms)                             337 B          78.1 kB
+├   /_app                                  0 B            77.8 kB
+├ ○ /404                                   182 B            78 kB
+├ ○ /marked                                18.9 kB        96.7 kB
+├ ○ /micromark                             15.7 kB         169 kB
+├ ○ /react-remark (390 ms)                 43.5 kB         197 kB
+└ ○ /remarkable                            90.9 kB         169 kB
++ First Load JS shared by all              77.8 kB
+  ├ chunks/framework-6d147d7a7a824486.js   45.2 kB
+  ├ chunks/main-52b35dd6c9360cbb.js        31.5 kB
+  ├ chunks/pages/_app-5cb38e139d19a014.js  288 B
+  └ chunks/webpack-de933733784ef5dd.js     752 B
+
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+```
+
+[remarkable-katex](https://github.com/bradhowes/remarkable-katex) 使ってるけど ES6 準拠じゃないので katex.mjs を使ってくれないのが難点. 自前で remarkable プラグイン書いたほうがいいかも.
