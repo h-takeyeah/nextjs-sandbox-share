@@ -23,6 +23,7 @@
     "rehype-katex": "^7.0.0",
     "remark-math": "^4.0.0",
     "remarkable": "^2.0.1",
+    "remarkable-katex": "^1.2.1",
     "typescript": "5.2.2"
   },
   "devDependencies": {

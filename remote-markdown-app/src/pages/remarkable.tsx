@@ -1,5 +1,7 @@
 import { useData } from '@/lib/useData'
 import { Remarkable } from 'remarkable'
+import rkatex from 'remarkable-katex'
+import 'katex/dist/katex.min.css'
 
 export default () => {
   const data = useData<{ statement: string }>('http://localhost:3001/api/sample')
@@ -8,6 +10,7 @@ export default () => {
   }
 
   const md = new Remarkable({})
+  md.use(rkatex)
   const output = md.render(data.statement)
 
   return (

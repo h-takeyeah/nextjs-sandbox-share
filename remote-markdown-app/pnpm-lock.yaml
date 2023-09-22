@@ -47,6 +47,9 @@ dependencies:
   remarkable:
     specifier: ^2.0.1
     version: 2.0.1
+  remarkable-katex:
+    specifier: ^1.2.1
+    version: 1.2.1
   typescript:
     specifier: 5.2.2
     version: 5.2.2
@@ -1000,6 +1003,10 @@ packages:
     resolution: {integrity: sha512-EbCu9kHgAxKmW1yEYjx3QafMyGY3q8noUbNUI5xyKbaFP89wbhDrKxyIQNukNYthzjNHZu6J7hwFg7hRm1svYA==}
     dependencies:
       mdast-util-to-hast: 10.2.0
+    dev: false
+
+  /remarkable-katex@1.2.1:
+    resolution: {integrity: sha512-Y1VquJBZnaVsfsVcKW2hmjT+pDL7mp8l5WAVlvuvViltrdok2m1AIKmJv8SsH+mBY84PoMw67t3kTWw1dIm8+g==}
     dev: false
 
   /remarkable@2.0.1:
