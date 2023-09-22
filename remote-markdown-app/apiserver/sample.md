@@ -12,6 +12,7 @@ $A + B$ の答えを求めてください。
 
 ```
 $A$ $B$
+$X_1$ $X_2$ ... $X_N$
 ```
 
 ## 出力
@@ -36,3 +37,35 @@ Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equat
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
+
+http://example.com
+
+| name | age |
+|:-----|:---:|
+| Bob  | 334 |
+| Alice | 5  |
+
+<span>Here is `span`</span>
+
+<div class="example-class">Here is `div` with `class` attr</div>
+
+↓ `script` Tag
+<script>
+console.warn("XSS!! Hahahaha!!!!!!!!!!!");
+</script>
+↑ `script` Tag
+
+Escaped Dollar marker is \\$ a + b \\$ , Dollar in KaTeX is $ \$ a + b \$ $
+
+$$
+\sum_{i=0}^{n} \left(\log \mathrm{sim}(Q^{(i)}, k_+) \right)^2 \$a
+$$
+
+inline katex which contains newline: $a
+b
+c
+$
+
+$A$$B$
+
+block katex without outer space$$\frac{a}{b}$$xxxx
