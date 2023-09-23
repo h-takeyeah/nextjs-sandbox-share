@@ -32,12 +32,12 @@ const KATEX_RANGE = /(?<=^|[^\\])(\${1,2})(?!\$)((?:[^])*?[^\\\$])\1(?!\$)/g;
 
 const replaceKatexToMathHtml = (s: string): string => {
   return s.replaceAll(KATEX_RANGE, (_, capture1, capture2) => {
-    let formula = capture2;
-    formula = formula.replaceAll("&amp;", "&");
-    formula = formula.replaceAll("&quot;", "&");
-    formula = formula.replaceAll("&gt;", ">");
-    formula = formula.replaceAll("&lt;", "<");
-    formula = formula.replaceAll("\\<br>", "\\\\\n");
+    const formula = capture2
+      .replaceAll("&amp;", "&")
+      .replaceAll("&quot;", "&")
+      .replaceAll("&gt;", ">")
+      .replaceAll("&lt;", "<")
+      .replaceAll("\\<br>", "\\\\\n");
     return katex.renderToString(formula, {
       displayMode: capture1.length === 2,
       throwOnError: false,
