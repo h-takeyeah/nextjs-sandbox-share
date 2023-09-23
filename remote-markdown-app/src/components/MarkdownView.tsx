@@ -34,7 +34,7 @@ const replaceKatexToMathHtml = (s: string): string => {
   return s.replaceAll(KATEX_RANGE, (_, capture1, capture2) => {
     const formula = capture2
       .replaceAll("&amp;", "&")
-      .replaceAll("&quot;", "&")
+      .replaceAll("&quot;", "\"")
       .replaceAll("&gt;", ">")
       .replaceAll("&lt;", "<")
       .replaceAll("\\<br>", "\\\\\n");
