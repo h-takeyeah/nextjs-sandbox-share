@@ -1,0 +1,24 @@
+/* https://github.com/wcoder/highlightjs-line-numbers.js */
+.ln-numbers {
+  float: left;
+  width: 1rem;
+  text-align: end;
+  color: #ccc;
+  border-right: 1px solid #999;
+  padding-right: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ln-codes {
+  padding-left: 10px;
+}
+
+.ln-codes::after {
+  content: '';
+  display: block;
+}
