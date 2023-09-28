@@ -31,6 +31,16 @@ import(`../../node_modules/highlight.js/lib/languages/${language}.js`)
 - 必要な時に import されるのでバンドルサイズには影響しない．
 - とはいえ一生使わないコードを成果物に入れるのも気持ち悪いので `import()` は使わず，素直に使う分のパーサを静的に import する方がよさそう．
 
+## codemirror (エディタ)
+- codemirror v6
+  - ref を使って React に組み込める．最低限なら `@uiw/react-codemirror` を使わなくてもできる．
+  - `@uiw/react-codemirror` のオーバーヘッド分減るのを期待したが結果はこのくらい
+
+```plain
+/react-codemirror                      29.5 kB         246 kB
+/codemirror                            1.05 kB         218 kB
+```
+
 ## @uiw/react-codemirror (エディタ)
 - codemirror v6 をもとにした React Component
   - 最新の codemirror v6 に対応したものはこのくらいしか見つけられなかった
