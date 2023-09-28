@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import dynamic from 'next/dynamic';
-import '@uiw/react-textarea-code-editor/dist.css';
+import dynamic from 'next/dynamic'
+import '@uiw/react-textarea-code-editor/dist.css'
+import NavLinks from '@/components/NavLinks'
 
 const CodeEditor = dynamic(
   () => import('@uiw/react-textarea-code-editor').then((mod) => mod.default),
@@ -12,7 +13,8 @@ export default () => {
     `function add(a, b) {\n  return a + b;\n}`
   )
   return (
-    <div>
+    <>
+      <NavLinks />
       <CodeEditor
         value={code}
         language="js"
@@ -25,6 +27,6 @@ export default () => {
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
         }}
       />
-    </div>
+    </>
   )
 }
