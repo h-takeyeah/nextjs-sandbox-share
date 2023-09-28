@@ -1,17 +1,31 @@
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror'
+import { useCodeMirror } from '@uiw/react-codemirror'
 import { cpp } from '@codemirror/lang-cpp'
-import { useCallback, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import NavLinks from '@/components/NavLinks'
 
+const extensions = [cpp()]
+
 export default () => {
-  const [sourcecode, setVal] = useState<string>('')
-  const onChange = useCallback<NonNullable<ReactCodeMirrorProps['onChange']>>((value, viewUpdate) => {
-    setVal(value)
-  }, [])
+  const editor = useRef<HTMLDivElement>(null)
+  const { setContainer } = useCodeMirror({
+    container: editor.current,
+    extensions,
+    value: '#include <iostream>\nint main() {\n  std::cout << "Hello World" << endl;\n  return 0;\n}',
+    maxHeight: '360px',
+    minHeight: '120px',
+    editable: false,
+  })
+
+  useEffect(() => {
+    if (editor.current) {
+      setContainer(editor.current)
+    }
+  }, [editor.current])
+
   return (
     <>
       <NavLinks />
-      <CodeMirror value={sourcecode} height='200px' extensions={[cpp()]} onChange={onChange} />
+      <div ref={editor} />
     </>
   )
 }
