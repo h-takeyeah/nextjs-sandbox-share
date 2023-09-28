@@ -49,3 +49,31 @@ import(`../../node_modules/highlight.js/lib/languages/${language}.js`)
 ## @uiw/react-textarea-code-editor (エディタ)
 - codemirror っぽいものを uiwjs オリジナルで作っている
 - バンドルサイズだけ見れば小さいが CSS の関係で next.config.js をいじらないと動かない
+
+
+## `next build` stat
+
+```plain
+Route (pages)                              Size     First Load JS
+┌ ○ /                                      624 B            88 kB
+├   /_app                                  0 B            84.9 kB
+├ ○ /404                                   185 B          85.1 kB
+├ ○ /codemirror                            1.05 kB         218 kB
+├ ○ /codemirror-dynamic                    3.04 kB        90.4 kB
+├ ○ /hljs                                  943 B           380 kB
+├ ○ /line-number-hljs                      1.2 kB          381 kB
+├   └ css/869b74a550073f41.css             713 B
+├ ○ /optimized-hljs                        6.24 kB         101 kB
+├ ○ /optimized-hljs-dynamic                3.23 kB        90.6 kB
+├ ○ /optimized-hljs-experimental           5.22 kB         100 kB
+├ ○ /react-codemirror                      29.5 kB         246 kB
+└ ○ /react-textarea-code-editor            3.06 kB        90.4 kB
+    └ css/fd8cb407a7e59580.css             930 B
++ First Load JS shared by all              84.9 kB
+  ├ chunks/framework-614030d3c5b8c24a.js   45.2 kB
+  ├ chunks/main-06a36295972b6692.js        31.7 kB
+  ├ chunks/pages/_app-9d6ba488ca63a1ed.js  293 B
+  └ chunks/webpack-a184fb0ba6c08c92.js     7.74 kB
+
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+```
