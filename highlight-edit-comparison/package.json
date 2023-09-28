@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@codemirror/lang-cpp": "^6.0.2",
+    "@codemirror/language": "^6.9.1",
+    "@codemirror/state": "^6.2.1",
+    "@codemirror/view": "^6.20.2",
     "@uiw/react-codemirror": "^4.21.18",
     "@uiw/react-textarea-code-editor": "^2.1.9",
     "highlight.js": "^11.8.0",

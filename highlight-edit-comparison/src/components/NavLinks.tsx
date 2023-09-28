@@ -12,6 +12,10 @@ export default memo(() => (
         </ul>
         <li><Link href="/optimized-hljs-experimental">(experimental) optimized highlight.js example</Link>(do not load language parser at startup)</li>
         <li><Link href="/line-number-hljs">highlight.js (with line number) example</Link></li>
+        <li><Link href="/codemirror">(original) codemirror v6 example</Link></li>
+        <ul>
+          <li><Link href="/codemirror-dynamic">codemirror v6 example (<strong>next/dynamic</strong>)</Link></li>
+        </ul>
         <li><Link href="/react-codemirror">@uiw/react-codemirror example</Link></li>
         <li><Link href="/react-textarea-code-editor">@uiw/react-textarea-code-editor example</Link></li>
         <li><Link href="/">Top</Link></li>
