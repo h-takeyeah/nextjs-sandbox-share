@@ -1,7 +1,14 @@
-import { ComponentPropsWithRef, FC, useCallback, useEffect, useRef } from 'react'
 import hljs from 'highlight.js/lib/core'
+import c from 'highlight.js/lib/languages/c'
 import cpp from 'highlight.js/lib/languages/cpp'
+import java from 'highlight.js/lib/languages/java'
+import python from 'highlight.js/lib/languages/python'
 import 'highlight.js/styles/default.css'
+
+hljs.registerLanguage('c', c)
+hljs.registerLanguage('cpp', cpp)
+hljs.registerLanguage('java', java)
+hljs.registerLanguage('python', python)
 
 // React.strictMode & dev 環境だと useEffect が2回呼ばれるのでハイライト後の HTML を
 // さらにハイライトしようとして警告が出る
@@ -9,32 +16,9 @@ if (process.env.NODE_ENV === 'development') {
   hljs.configure({ ignoreUnescapedHTML: true })
 }
 
-const languages = ['javascript']
-
-const OptimizedHighlight: FC<ComponentPropsWithRef<'pre'>> = ({ children }) => {
-  const ref = useRef<HTMLPreElement>(null)
-//  const registerLanguage = useCallback(() => Promise.all(
-//    languages.map(async l => {
-//      const m = await import(`highlight.js/es/languages/${l}.js`)
-//      return hljs.registerLanguage(l, m)
-//    })
-//  ), [languages])
-
-  const registerLanguage = useCallback(() => Promise.all([
-    hljs.registerLanguage('cpp', cpp)
-  ]), [languages])
-
-  useEffect(() => {
-    if (!ref.current) return
-    const elements = ref.current.querySelectorAll<HTMLElement>('pre code')
-    registerLanguage().then(() => {
-      for (let i = 0; i < elements.length; i++) {
-        hljs.highlightElement(elements[i])
-      }
-    })
-  }, [ref])
-
-  return <pre ref={ref}><code>{children}</code></pre>
+const OptimizedHighlight = ({ sourcecode, language }: { sourcecode: string, language: string}) => {
+  const { value } = hljs.highlight(sourcecode, { language })
+  return <pre><code className={`hljs language-${language}`} dangerouslySetInnerHTML={{ __html: value }}></code></pre>
 }
 
 export default OptimizedHighlight

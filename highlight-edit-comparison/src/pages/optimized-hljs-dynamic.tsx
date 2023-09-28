@@ -1,5 +1,5 @@
 import NavLinks from '@/components/NavLinks'
-import OptimizedHighlight from '@/components/OptimizedHighlight'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
 const sourcecodes = {
@@ -31,6 +31,10 @@ int main() {
 `,
   python: 'print("Hello World")\n',
 } as const
+
+const OptimizedHighlight = dynamic(() => import('@/components/OptimizedHighlight'), {
+  loading: () => <p>Loading...</p>
+})
 
 export default () => {
   const [lang, setLang] = useState<keyof typeof sourcecodes>('cpp')
